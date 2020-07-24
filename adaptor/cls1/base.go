@@ -30,7 +30,7 @@ func (g *Cls1) Policies() (status bool, err error) {
 }
 
 func init() {
-	// 导入包时 注册 cls1
+	// 导入包时 注册 cls1， func() 约定的返回值为 adaptor.Adaptors，所以 new(Cls1)使得Cls1必须集成interface
 	adaptor.Register("Cls1", func() adaptor.Adaptors {
 		return new(Cls1)
 	})
